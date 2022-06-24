@@ -12,7 +12,12 @@ describe('pegaArquivo::', () => {
   })
   
   it('deve retornar array com resultados', async () => {
-    const resultado = await pegaArquivo('') //CAMINHO DO ARQUIVO 
+    const resultado = await pegaArquivo(' ') //CAMINHO DO ARQUIVO texto1.md
     expect(resultado).toEqual(arrayResult)
+  })
+
+  it('deve retornar mensagem "não há links"', async () => {
+    const resultado = await pegaArquivo(' ') //CAMINHO DO ARQUIVO texto1_semLinks.md
+    expect(resultado).toBe('não há links')
   })
 });
